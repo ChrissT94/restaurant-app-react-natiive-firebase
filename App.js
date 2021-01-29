@@ -1,21 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react'
+import Splash from './components/Splash'
+import IndexScreens from './screens/IndexScreens'
+class App extends Component {
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  constructor(props) {
+    super(props);
+    this.state = {
+      timePassed: false,
+    };
+  }
+  render(){  
+
+    var mainScreen = <Splash />
+
+    setTimeout(() => { this.setState({ timePassed: true }) }, 3000)
+
+    if (!this.state.timePassed) {
+
+      return mainScreen
+
+    } else {
+
+      mainScreen = <IndexScreens />
+
+    }
+    return mainScreen 
+  }
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
+
