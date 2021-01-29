@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import Splash from './components/Splash'
 import IndexScreens from './screens/IndexScreens'
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -10,7 +9,8 @@ class App extends Component {
     };
   }
   render(){  
-
+    
+    console.ignoredYellowBox = ['Setting a timer'];
     var mainScreen = <Splash />
 
     setTimeout(() => { this.setState({ timePassed: true }) }, 3000)

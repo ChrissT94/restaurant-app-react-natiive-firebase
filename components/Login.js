@@ -22,19 +22,21 @@ export default class LoginScreen extends React.Component {
   }
 
   loginUser = (email, password, props) => {
+    if (this.state.email === '' || this.state.password === '') {
+      alert('Empty fields...')
+    } else {
+      try {
+        firebase.firebase.auth().signInWithEmailAndPassword(email, password).then(function (user) {
 
-    try {
-      firebase.firebase.auth().signInWithEmailAndPassword(email, password).then(function (user) {
+          props.navigation.navigate('HomeDrawer')
 
-        props.navigation.navigate('HomeDrawer')
+        })
+      } catch (error) {
+        console.log(error.toString())
+      }
 
-      })
-    } catch (error) {
-      console.log(error.toString())
     }
-
   }
-
   render() {
     return (
       <ImageBackground source={imgbg} style={{ width: '100%', height: '100%' }}>
@@ -59,7 +61,7 @@ export default class LoginScreen extends React.Component {
           </View>
 
           <View style={styles.containerRegister}>
-            <Text style={{ color: 'white', fontWeight: 'bold' }}>Forgot your password??
+            <Text style={{ color: 'white', fontWeight: 'bold' }}>Forgot your password?
                 <Text style={{ color: 'red', fontWeight: 'bold' }}>  Restore</Text>
             </Text>
           </View>
@@ -93,7 +95,7 @@ const styles = StyleSheet.create({
     marginLeft: '10%',
     marginRight: '10%',
     borderRadius: 25,
-    
+
   },
   containerPassword: {
     height: 60,
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
     color: '#673C3D',
     fontWeight: 'bold',
   },
-  
+
   containerRegister: {
     height: 60,
     marginLeft: '6%',

@@ -40,9 +40,9 @@ const WelcomeScreen = (props) => {
                         <Image source={require('../assets/welcome1.jpg')} style={styles.imageStyle} />
                         <View style={styles.wrapper}>
                             <Text style={styles.header}>Pasión Restaurant</Text>
-                            <Text style={styles.paragraph}>Un restaurante que capta la esencia de su deliciosa
-                            comida y un ambiente único al presentar enlaces rápidos a sus menús de comida
-                                     y bebida.</Text>
+                            <Text style={styles.paragraph}>A restaurant that captures the essence of its 
+                            delicious food and a unique atmosphere by presenting quick links to its food
+                            and drink menus.</Text>
                         </View>
                        
                     </View>
@@ -52,10 +52,10 @@ const WelcomeScreen = (props) => {
                             style={styles.imageStyle}
                         />
                         <View style={styles.wrapper}>
-                            <Text style={styles.header}>Simplicidad...</Text>
-                            <Text style={styles.paragraph}>A veces la simplicidad funciona a su ventaja, y
-                            "Pasión Restaurant" sabe cómo mostrar a las personas lo que ellos ofrecen en
-                                     cuestión de segundos con hermosas frutas y vajilla.</Text>
+                            <Text style={styles.header}>Simplicity...</Text>
+                            <Text style={styles.paragraph}>Sometimes simplicity works to your advantage, 
+                            and "Pasión Restaurant" knows how to show people what they have to offer in 
+                            seconds with beautiful fruit and tableware.</Text>
                         </View>
                     </View>
                     <View style={{ width, height }}>
@@ -64,9 +64,9 @@ const WelcomeScreen = (props) => {
                             style={styles.imageStyle}
                         />
                         <View style={styles.wrapper}>
-                            <Text style={styles.header}>Efectividad...</Text>
-                            <Text style={styles.paragraph}>Pasión Restaurant recibe una estrella de oro por ofrecer
-                                    casi todo lo que usted necesita en una aplicación móvil de restaurante.</Text>
+                            <Text style={styles.header}>Effectiveness...</Text>
+                            <Text style={styles.paragraph}>Pasión Restaurant receives a gold star for offering 
+                            almost everything you need in a mobile application for this restaurant. </Text>
                         </View>
                         <View style={styles.containerButtonMain}>                            
                             <Text style={styles.containerButton} onPress={() => props.navigation.navigate('Loading')}>Done</Text>
@@ -142,7 +142,8 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 20,
         paddingBottom: 10,
-        elevation: 3
+        elevation: 3,
+        color: '#673C3D'
         
     },
     paginationDots: {

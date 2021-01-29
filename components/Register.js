@@ -151,11 +151,11 @@ export default class Register extends React.Component {
 
   singUpUser = (email, password) => {
     if (this.state.userName === '' || this.state.email === '' || this.state.password == '') {
-      alert('Campos vacios....')
+      alert('Empty fields...')
     } else {
       try {
         if (this.state.password.length < 6) {
-          alert("Ingrese al menos 6 caracteres...")
+          alert("Please enter at least 6 characters ...")
           return
         }
         firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
   },
 
   titleScreen: {
-    color: '#4c4545',
+    color: '#673C3D',
     fontWeight: 'bold',
     fontSize: 18,
     paddingTop: '25%'
